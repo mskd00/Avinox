@@ -7,9 +7,15 @@
       }
       table, th, td {
         border: 1px solid black;
+        border-collapse: collapse;
       }
       td {
         padding: 2rem;
+      }
+
+      .description {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: blueviolet
       }
     </style>
     <meta charset="UTF-8" />
@@ -37,18 +43,16 @@
         نسل‌های مختلف برای کشف و جستجو در دنیای پیرامون بوده است.
       </p>
       <table style="width: 100%; border: 1px solid black;">
-        <tr>
-          <th> <span style="font-weight: 800; color: orange;">سطر </span>اول</th>
-          <th>سطر دوم</th>
-          <th>سطر سوم</th>
+        <tr">
+          <th colspan="3"> <span style="font-weight: 800; color: orange;">سطر </span>اول</th>
+
         </tr>
         <tr>
-          <td>ستون اول</td>
+          <td rowspan="2">ستون اول</td>
           <td>ستون دوم</td>
           <td>ستون سوم</td>
         </tr>
         <tr>
-          <td>ستون اول</td>
           <td>ستون دوم</td>
           <td>ستون سوم</td>
         </tr>
@@ -60,3 +64,6 @@
     </div>
   </body>
 </html>
+
+
+// TODO: Write everything in a table with style
