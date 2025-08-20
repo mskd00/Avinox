@@ -5,19 +5,33 @@ body {
 
 table,
 td,
-th {
+th:nth-child(odd) {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 1rem;
+}
+
+tr :hover {
+  background-color: lightgray;
 }
 
 .details-description {
   text-align: right;
 }
 .button {
-  padding: 15px;
-  font-size: 25px;
-  border-radius: 12px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  background-color: darkcyan;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #0056b3;
 }
 
 .container {
@@ -49,5 +63,21 @@ th {
   margin: 0 auto;
   border-radius: 1rem;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-  
+}
+
+/* Atribute Selector */
+
+[colspan="3"] {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 114, 63, 0.171);
+}
+
+#random {
+  color: blue;
+  font-weight: bold;
+}
+
+:focus {
+  outline: 2px solid blue;
 }
