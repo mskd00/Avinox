@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(50, 50, 50);
+  color: white;
+}
+
+.section {
+  display: block;
+  align-items: center;
+  background-color: blue;
+  padding: 5rem;
+  direction: rtl;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  background-color: brown;
+}
+
+.books {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  flex-direction: column;
+  background-color: darkcyan;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: deeppink;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+img {
+  width: 10rem;
+  border-radius: 0.4rem;
+}
