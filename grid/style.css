@@ -1,0 +1,170 @@
+/* ========================================================================== */
+/* ========= استایل‌های عمومی و پایه ========= */
+/* ========================================================================== */
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0 20px 40px;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 40px;
+}
+
+h1 { color: #212529; }
+h2 { color: #007bff; border-bottom: 2px solid #cce5ff; padding-bottom: 10px; margin-top: 50px; }
+h3 { color: #343a40; font-size: 1.1em; margin: 20px 0 10px; }
+p { line-height: 1.7; }
+
+section {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* ========================================================================== */
+/* ========= استایل‌های پایه کانتینر و آیتم ========= */
+/* ========================================================================== */
+
+.container {
+    /* فعال‌سازی Grid */
+    display: grid; 
+    
+    background-color: #e9ecef;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.item {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+
+/* ========================================================================== */
+/* ========= ۱. تعریف ستون‌ها و ردیف‌ها ========= */
+/* ========================================================================== */
+
+.grid-columns-mixed {
+    /* ستون اول 200px، ستون دوم به اندازه محتوا، ستون سوم 25% از عرض والد */
+    grid-template-columns: 200px auto 25%;
+    gap: 10px;
+}
+
+.grid-columns-fr {
+    /* فضای خالی به نسبت ۱ به ۲ به ۱ تقسیم می‌شود. */
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+}
+
+.grid-rows {
+    /* سه ستون مساوی */
+    grid-template-columns: repeat(3, 1fr);
+    /* ارتفاع ردیف اول 100px، دوم auto، و سوم 150px */
+    grid-template-rows: 100px auto 150px;
+    gap: 10px;
+}
+
+/* ========================================================================== */
+/* ========= ۲. ایجاد فاصله (Gap) ========= */
+/* ========================================================================== */
+
+.grid-with-gap {
+    grid-template-columns: repeat(3, 1fr);
+    /* 20px فاصله بین ردیف‌ها و 10px فاصله بین ستون‌ها */
+    gap: 20px 10px;
+}
+
+
+/* ========================================================================== */
+/* ========= ۳. جایگذاری آیتم‌ها ========= */
+/* ========================================================================== */
+
+.placement-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 80px); /* دو ردیف با ارتفاع 80px */
+    gap: 10px;
+}
+
+.item-line-based {
+    background-color: #dc3545; /* رنگ متفاوت برای تشخیص */
+    /* این آیتم از خط ستون شماره ۱ شروع و قبل از خط شماره ۳ تمام می‌شود. */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* این آیتم در ردیف دوم قرار می‌گیرد. */
+    grid-row: 2;
+}
+
+.item-span {
+    background-color: #28a745; /* رنگ متفاوت برای تشخیص */
+    /* این آیتم به اندازه ۲ ستون گسترش پیدا می‌کند. */
+    grid-column: span 2;
+}
+
+
+/* ========================================================================== */
+/* ========= ۴. چیدمان با نام‌گذاری نواحی ========= */
+/* ========================================================================== */
+
+.holy-grail-layout {
+    grid-template-columns: 200px 1fr; /* ستون اول برای سایدبار، دوم برای محتوای اصلی */
+    grid-template-rows: auto 1fr auto; /* ردیف اول هدر، دوم محتوا، سوم فوتر */
+    gap: 15px;
+    min-height: 400px;
+    /* تعریف بصری لی‌آوت: */
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+}
+
+/* حالا هر ناحیه را به المان مربوطه اختصاص می‌دهیم */
+.area { display: flex; align-items: center; justify-content: center; font-size: 1.5em; border-radius: 5px; color: white; }
+.header-area  { grid-area: header;  background-color: #6c757d; }
+.sidebar-area { grid-area: sidebar; background-color: #17a2b8; }
+.main-area    { grid-area: main;    background-color: #ffc107; color: #333; }
+.footer-area  { grid-area: footer;  background-color: #6c757d; }
+
+
+/* ========================================================================== */
+/* ========= ۵. تراز کردن و چینش (Alignment) ========= */
+/* ========================================================================== */
+
+.alignment-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+}
+.alignment-container .item {
+    padding: 10px; /* برای نمایش بهتر چینش، پدینگ را کم می‌کنیم */
+}
+
+/* چینش تمام آیتم‌های داخل سلول‌ها */
+.items-center {
+    justify-items: center; /* همه آیتم‌ها را در محور افقی وسط‌چین می‌کند */
+    align-items: center;   /* همه آیتم‌ها را در محور عمودی وسط‌چین می‌کند */
+}
+
+/* بازنویسی چینش برای یک آیتم خاص */
+.item-special-align {
+    background-color: #fd7e14;
+    justify-self: end;  /* این آیتم خاص در محور افقی به انتها می‌چسبد */
+    align-self: start;  /* این آیتم خاص در محور عمودی به ابتدا می‌چسبد */
+}

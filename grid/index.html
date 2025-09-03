@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایشگاه جامع CSS Grid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>نمایشگاه جامع CSS Grid</h1>
+        <p>CSS Grid یک سیستم چیدمان دو بعدی است که به شما اجازه می‌دهد محتوا را هم در ردیف و هم در ستون کنترل کنید.</p>
+    </header>
+
+    <main>
+        <!-- ================= بخش اول: تعریف ساختار گرید ================= -->
+        
+        <section>
+            <h2>۱. تعریف ستون‌ها و ردیف‌ها (Columns & Rows)</h2>
+            <p>اساسی‌ترین مفهوم گرید، تعریف یک شبکه از ستون‌ها و ردیف‌هاست.</p>
+            
+            <div class="example">
+                <h3>grid-template-columns با واحدهای مختلف (px, auto, %)</h3>
+                <div class="container grid-columns-mixed">
+                    <div class="item">۱ (200px)</div>
+                    <div class="item">۲ (auto)</div>
+                    <div class="item">۳ (25%)</div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>grid-template-columns با واحد fr (Fractional Unit)</h3>
+                <p>واحد <code>fr</code> فضای باقی‌مانده را به نسبت‌های مشخص تقسیم می‌کند.</p>
+                <div class="container grid-columns-fr">
+                    <div class="item">۱ (1fr)</div>
+                    <div class="item">۲ (2fr)</div>
+                    <div class="item">۳ (1fr)</div>
+                </div>
+            </div>
+            
+            <div class="example">
+                <h3>تعریف ردیف‌ها با grid-template-rows</h3>
+                <div class="container grid-rows">
+                    <div class="item">۱ (ارتفاع 100px)</div>
+                    <div class="item">۲</div>
+                    <div class="item">۳</div>
+                    <div class="item">۴ (ارتفاع 150px)</div>
+                    <div class="item">۵</div>
+                    <div class="item">۶</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>۲. ایجاد فاصله (Gap)</h2>
+            <p>به سادگی می‌توان بین سلول‌های گرید فاصله (gutter) ایجاد کرد.</p>
+
+            <div class="example">
+                <h3>استفاده از gap</h3>
+                <div class="container grid-with-gap">
+                    <div class="item">۱</div><div class="item">۲</div><div class="item">۳</div>
+                    <div class="item">۴</div><div class="item">۵</div><div class="item">۶</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>۳. جایگذاری آیتم‌ها در گرید (Item Placement)</h2>
+            <p>قدرت اصلی گرید در توانایی قرار دادن دقیق آیتم‌ها در هر نقطه از شبکه است.</p>
+
+            <div class="example">
+                <h3>جایگذاری با شماره خطوط (Line Numbers)</h3>
+                <div class="container placement-container">
+                    <div class="item">۱</div>
+                    <div class="item item-line-based">آیتم ویژه (ستون ۱ تا ۳)</div>
+                    <div class="item">۳</div>
+                    <div class="item">۴</div>
+                    <div class="item">۵</div>
+                </div>
+            </div>
+            
+            <div class="example">
+                <h3>گسترش آیتم با span</h3>
+                <div class="container placement-container">
+                    <div class="item">۱</div>
+                    <div class="item item-span">آیتم ویژه (گسترش به اندازه ۲ ستون)</div>
+                    <div class="item">۴</div>
+                    <div class="item">۵</div>
+                    <div class="item">۶</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= بخش دوم: چیدمان پیشرفته ================= -->
+
+        <section>
+            <h2>۴. چیدمان با نام‌گذاری نواحی (Grid Template Areas)</h2>
+            <p>این روش به شما اجازه می‌دهد لی‌آوت صفحه را به صورت کاملاً بصری و خوانا طراحی کنید.</p>
+
+            <div class="example">
+                <h3>مثال: لی‌آوت کلاسیک "Holy Grail"</h3>
+                <div class="container holy-grail-layout">
+                    <header class="area header-area">Header</header>
+                    <aside class="area sidebar-area">Sidebar</aside>
+                    <main class="area main-area">Main Content</main>
+                    <footer class="area footer-area">Footer</footer>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>۵. تراز کردن و چینش (Alignment)</h2>
+            <p>گرید کنترل کاملی روی چینش آیتم‌ها در داخل سلول‌ها و چینش کل شبکه در کانتینر فراهم می‌کند.</p>
+
+            <div class="example">
+                <h3>justify-items و align-items (چینش آیتم‌ها درون سلول)</h3>
+                <div class="container alignment-container items-center">
+                    <div class="item">۱</div>
+                    <div class="item">۲</div>
+                    <div class="item item-special-align">ویژه</div>
+                    <div class="item">۴</div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>justify-self و align-self (چینش یک آیتم خاص)</h3>
+                <p>در مثال بالا، آیتم "ویژه" با استفاده از <code>align-self</code> و <code>justify-self</code> از قانون کلی پیروی نکرده است.</p>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
